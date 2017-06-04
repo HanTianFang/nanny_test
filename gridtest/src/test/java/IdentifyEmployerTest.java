@@ -1,31 +1,43 @@
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.concurrent.TimeUnit;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
-    /**
-     * Created by Deft on 2017/5/9.
-     */
-    public class IdentifyEmployerTest {
-        private static WebDriver driver;
+/**
+ * Created by Deft on 2017/5/13.
+ */
+public class IdentifyEmployerTest {
+    private static final String BASE_URL = "http://nanny.com:8080/nanny/";
+    private static List<WebDriver> drivers = new ArrayList<WebDriver>();
 
-        @Before
-        public void openPage() throws InterruptedException {
-            System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-            registerSuccess();
-            addInfoSuccess();
-        }
-
-        public void registerSuccess() throws InterruptedException {
-
-            driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
+    @BeforeClass
+    public static void openPage() throws MalformedURLException {
+        DesiredCapabilities ieDesiredcap1 = DesiredCapabilities.firefox();
+        WebDriver driver1 = new RemoteWebDriver(new URL("http://nanny.com:4444/wd/hub"), ieDesiredcap1);
+        DesiredCapabilities ieDesiredcap2 = DesiredCapabilities.chrome();
+        WebDriver driver2 = new RemoteWebDriver(new URL("http://nanny.com:4444/wd/hub"), ieDesiredcap2);
+        DesiredCapabilities ieDesiredcap3 = DesiredCapabilities.internetExplorer();
+        WebDriver driver3 = new RemoteWebDriver(new URL("http://nanny.com:4444/wd/hub"), ieDesiredcap3);
+        drivers.add(driver1);
+        drivers.add(driver2);
+        drivers.add(driver3);
+    }
+    @Test
+    public void loginSuccess() throws InterruptedException {
+        int i = 1;
+        for (WebDriver driver:drivers             ) {
+            driver.get(BASE_URL + "/ToFindNanny.jsp");
             WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
             register.click();
             Thread.sleep(3000);
@@ -49,9 +61,6 @@ import java.util.concurrent.TimeUnit;
             Thread.sleep(1000);
             WebElement userEmail = driver.findElement(By.id("userEmail"));
             userEmail.click();
-        }
-
-        public void addInfoSuccess() throws InterruptedException {
             Thread.sleep(3000);
             WebElement username = driver.findElement(By.id("username"));
             username.sendKeys("聪明蛋");
@@ -77,10 +86,6 @@ import java.util.concurrent.TimeUnit;
             Thread.sleep(6000);
             WebElement toIdentifyButton = driver.findElement(By.id("identEmployer"));
             toIdentifyButton.click();
-        }
-
-        @Test
-        public void identifySuccess() throws InterruptedException {
             Thread.sleep(3000);
             WebElement workPlace = driver.findElement(By.id("workPlace"));
             workPlace.sendKeys("仙女族");
@@ -124,70 +129,12 @@ import java.util.concurrent.TimeUnit;
             Assert.assertEquals("成功",  driver.switchTo().alert().getText());
         }
 
-        @Test
-        public void identifyFail1() throws InterruptedException {
-            WebElement identifyButton = driver.findElement(By.id("employersubmit"));
-            identifyButton.click();
-            Thread.sleep(1000);
-            System.out.println(driver.switchTo().alert().getText());
-            String expected = "工作经验不能为空\n" +
-                    "学历不能为空\n" +
-                    "可支付工资不能为空\n" +
-                    "月嫂每月可休息天数不能为空\n" +
-                    "婴儿出生年不能为空\n" +
-                    "婴儿出生月不能为空\n" +
-                    "婴儿出生日不能为空\n" +
-                    "婴儿出生体重不能为空\n" +
-                    "母亲年龄不能为空\n" +
-                    "母亲体重不能为空\n" +
-                    "备注不能为空\n" +
-                    "备注不能为空\n" +
-                    "备注不能为空";
-            Assert.assertEquals(expected,  driver.switchTo().alert().getText());
-        }
 
-        @Test
-        public void identifyFail2() throws InterruptedException {
-            WebElement identifyButton = driver.findElement(By.id("employersubmit"));
-            identifyButton.click();
-            Thread.sleep(1000);
-            Assert.assertEquals("成功",  driver.switchTo().alert().getText());
-        }
-
-        @Test
-        public void identifyFail3() throws InterruptedException {
-            WebElement identifyButton = driver.findElement(By.id("employersubmit"));
-            identifyButton.click();
-            Thread.sleep(1000);
-            Assert.assertEquals("成功",  driver.switchTo().alert().getText());
-        }
-
-        @Test
-        public void identifyFail4() throws InterruptedException {
-            WebElement identifyButton = driver.findElement(By.id("employersubmit"));
-            identifyButton.click();
-            Thread.sleep(1000);
-            Assert.assertEquals("成功",  driver.switchTo().alert().getText());
-        }
-
-        @Test
-        public void identifyFail5() throws InterruptedException {
-            WebElement identifyButton = driver.findElement(By.id("employersubmit"));
-            identifyButton.click();
-            Thread.sleep(1000);
-            Assert.assertEquals("成功",  driver.switchTo().alert().getText());
-        }
-
-        @Test
-        public void identifyFail6() throws InterruptedException {
-            WebElement identifyButton = driver.findElement(By.id("employersubmit"));
-            identifyButton.click();
-            Thread.sleep(1000);
-            Assert.assertEquals("成功",  driver.switchTo().alert().getText());
-        }
-        @After
-        public void closePage(){
+    }
+    @After
+    public void closePage(){
+        for (WebDriver driver:drivers) {
             driver.quit();
         }
     }
-
+}

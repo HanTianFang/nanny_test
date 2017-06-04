@@ -1,7 +1,4 @@
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,11 +13,10 @@ import java.util.concurrent.TimeUnit;
  * Created by Deft on 2017/5/3.
  */
 public class RegisterTest {
-    private static final String BASE_URL = "http://localhost:8080/nanny/";
     private static WebDriver driver;
 
-    @BeforeClass
-    public static void openPage(){
+    @Before
+    public void openPage(){
         System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -28,12 +24,12 @@ public class RegisterTest {
     @Test
     public void registerSuccess() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
         WebElement email = driver.findElement(By.className("swal2-input"));
-        email.sendKeys("1@qq.com");
+        email.sendKeys(System.currentTimeMillis() + "@qq.com");
         WebElement button1 = driver.findElement(By.cssSelector(".swal2-confirm.swal2-styled"));
         button1.click();
         Thread.sleep(3000);
@@ -48,14 +44,14 @@ public class RegisterTest {
         button3.click();
         Thread.sleep(1000);
 
-        Assert.assertEquals("您注册成功!",  driver.findElement(By.id("swal2-content")).getText());
+        Assert.assertEquals("您注册成功！",  driver.findElement(By.id("swal2-content")).getText());
 
     }
 
     @Test
     public void registerFail1() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
@@ -71,7 +67,7 @@ public class RegisterTest {
     @Test
     public void registerFail2() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
@@ -87,7 +83,7 @@ public class RegisterTest {
     @Test
     public void registerFail3() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
@@ -103,12 +99,12 @@ public class RegisterTest {
     @Test
     public void registerFail4() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
         WebElement email = driver.findElement(By.className("swal2-input"));
-        email.sendKeys("1@qq.com");
+        email.sendKeys(System.currentTimeMillis() + "@qq.com");
         WebElement button1 = driver.findElement(By.cssSelector(".swal2-confirm.swal2-styled"));
         button1.click();
         Thread.sleep(3000);
@@ -124,17 +120,17 @@ public class RegisterTest {
     @Test
     public void registerFail5() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
         WebElement email = driver.findElement(By.className("swal2-input"));
-        email.sendKeys("1@qq.com");
+        email.sendKeys(System.currentTimeMillis() + "@qq.com");
         WebElement button1 = driver.findElement(By.cssSelector(".swal2-confirm.swal2-styled"));
         button1.click();
         Thread.sleep(3000);
         WebElement password = driver.findElement(By.className("swal2-input"));
-        password.sendKeys("22222222222");
+        password.sendKeys("22222222");
         WebElement  button2 = driver.findElement(By.cssSelector(".swal2-confirm.swal2-styled"));
         button2.click();
         Thread.sleep(10000);
@@ -145,12 +141,12 @@ public class RegisterTest {
     @Test
     public void registerFail6() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
         WebElement email = driver.findElement(By.className("swal2-input"));
-        email.sendKeys("1@qq.com");
+        email.sendKeys(System.currentTimeMillis() + "@qq.com");
         WebElement button1 = driver.findElement(By.cssSelector(".swal2-confirm.swal2-styled"));
         button1.click();
         Thread.sleep(3000);
@@ -166,12 +162,12 @@ public class RegisterTest {
     @Test
     public void registerFail7() throws InterruptedException {
 
-        driver.get(BASE_URL + "/ToFindNanny.jsp");
+        driver.get(Settings.DOMAIN + "/ToFindNanny.jsp");
         WebElement register = driver.findElement(By.cssSelector(".glyphicon.glyphicon-user"));
         register.click();
         Thread.sleep(3000);
         WebElement email = driver.findElement(By.className("swal2-input"));
-        email.sendKeys("1@qq.com");
+        email.sendKeys(System.currentTimeMillis() + "@qq.com");
         WebElement button1 = driver.findElement(By.cssSelector(".swal2-confirm.swal2-styled"));
         button1.click();
         Thread.sleep(3000);
@@ -191,7 +187,7 @@ public class RegisterTest {
     }
 
     @After
-    public void closePage(){
-        //driver.quit();
+    public void closePage() throws InterruptedException {
+        driver.quit();
     }
 }

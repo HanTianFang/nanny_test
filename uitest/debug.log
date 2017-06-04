@@ -5,3 +5,63 @@
 [0516/194031.011:ERROR:process_reader_win.cc(233)] ReadMemory at 0x923000 of 53248 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
 [0516/194031.011:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
 [0516/194031.011:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
+[0602/212330.215:ERROR:process_info.cc(625)] range at 0xfee3f000, size 0x230 fully unreadable
+[0602/212551.001:ERROR:process_info.cc(625)] range at 0xff5e4000, size 0x230 fully unreadable
+[0602/212551.013:ERROR:process_info.cc(625)] range at 0xff8bd000, size 0x230 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff5ef000, size 0xf84 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff5ec000, size 0xf84 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff5af000, size 0xf84 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff5ac000, size 0xf84 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff5a9000, size 0xf84 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff5a6000, size 0xf84 fully unreadable
+[0602/212551.022:ERROR:process_info.cc(625)] range at 0xff49f000, size 0xf84 fully unreadable
+[0602/212551.023:ERROR:process_info.cc(625)] range at 0xff49c000, size 0xf84 fully unreadable
+[0602/212551.023:ERROR:process_info.cc(625)] range at 0xff499000, size 0xf84 fully unreadable
+[0602/212551.023:ERROR:process_info.cc(625)] range at 0xff496000, size 0xf84 fully unreadable
+[0602/212551.023:ERROR:process_info.cc(625)] range at 0xff493000, size 0xf84 fully unreadable
+[0602/212551.023:ERROR:process_info.cc(625)] range at 0xff490000, size 0xf84 fully unreadable
+[0602/212551.042:ERROR:process_info.cc(625)] range at 0xff8bb000, size 0xf84 fully unreadable
+[0602/212551.042:ERROR:process_info.cc(625)] range at 0xff8b8000, size 0xf84 fully unreadable
+[0602/212551.042:ERROR:process_info.cc(625)] range at 0xff8b5000, size 0xf84 fully unreadable
+[0602/212551.042:ERROR:process_info.cc(625)] range at 0xff87f000, size 0xf84 fully unreadable
+[0602/212551.042:ERROR:process_info.cc(625)] range at 0xff879000, size 0xf84 fully unreadable
+[0602/212551.043:ERROR:process_info.cc(625)] range at 0xff876000, size 0xf84 fully unreadable
+[0602/212551.043:ERROR:process_info.cc(625)] range at 0xff76f000, size 0xf84 fully unreadable
+[0602/212551.043:ERROR:process_info.cc(625)] range at 0xff87c000, size 0xf84 fully unreadable
+[0602/212551.043:ERROR:process_info.cc(625)] range at 0xff76c000, size 0xf84 fully unreadable
+[0602/212551.043:ERROR:process_info.cc(625)] range at 0xff769000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff766000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff763000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff760000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff75d000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff75a000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff757000, size 0xf84 fully unreadable
+[0602/212551.044:ERROR:process_info.cc(625)] range at 0xff754000, size 0xf84 fully unreadable
+[0602/212551.045:ERROR:process_info.cc(625)] range at 0xff751000, size 0xf84 fully unreadable
+[0602/212551.045:ERROR:process_info.cc(625)] range at 0xff74e000, size 0xf84 fully unreadable
+[0602/212551.045:ERROR:process_info.cc(625)] range at 0xff74b000, size 0xf84 fully unreadable
+[0602/212551.045:ERROR:process_info.cc(625)] range at 0xff748000, size 0xf84 fully unreadable
+[0602/212551.046:ERROR:process_info.cc(625)] range at 0xff745000, size 0xf84 fully unreadable
+[0602/212551.046:ERROR:process_info.cc(625)] range at 0xff742000, size 0xf84 fully unreadable
+[0602/212551.046:ERROR:process_info.cc(625)] range at 0xff73f000, size 0xf84 fully unreadable
+[0602/212551.046:ERROR:process_info.cc(625)] range at 0xff73c000, size 0xf84 fully unreadable
+[0602/212551.046:ERROR:process_info.cc(625)] range at 0xff739000, size 0xf84 fully unreadable
+[0602/212551.046:ERROR:process_info.cc(625)] range at 0xff736000, size 0xf84 fully unreadable
+[0602/212551.047:ERROR:process_info.cc(625)] range at 0xff733000, size 0xf84 fully unreadable
+[0602/212551.047:ERROR:process_info.cc(625)] range at 0xff730000, size 0xf84 fully unreadable
+[0602/212551.047:ERROR:process_info.cc(625)] range at 0xff72d000, size 0xf84 fully unreadable
+[0602/212551.047:ERROR:process_info.cc(625)] range at 0xff72a000, size 0xf84 fully unreadable
+[0602/212551.048:ERROR:process_info.cc(625)] range at 0xff727000, size 0xf84 fully unreadable
+[0602/212551.048:ERROR:process_info.cc(625)] range at 0xff724000, size 0xf84 fully unreadable
+[0602/212551.048:ERROR:process_info.cc(625)] range at 0xff721000, size 0xf84 fully unreadable
+[0602/212551.048:ERROR:process_info.cc(625)] range at 0xff71e000, size 0xf84 fully unreadable
+[0602/212551.048:ERROR:process_info.cc(625)] range at 0xff71b000, size 0xf84 fully unreadable
+[0602/212551.048:ERROR:process_info.cc(625)] range at 0xff718000, size 0xf84 fully unreadable
+[0602/212551.049:ERROR:process_info.cc(625)] range at 0xff715000, size 0xf84 fully unreadable
+[0602/212551.049:ERROR:process_info.cc(625)] range at 0xff712000, size 0xf84 fully unreadable
+[0602/212657.965:ERROR:process_reader_win.cc(83)] NtQuerySystemInformation: {没有足够配额} 没有足够的虚拟内存或分页文件配额以完成指定的操作。  (0xc0000017)
+[0602/212657.973:ERROR:exception_snapshot_win.cc(87)] thread ID 3900 not found in process
+[0602/212657.974:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed
+[0602/212657.986:ERROR:process_reader_win.cc(83)] NtQuerySystemInformation: {没有足够配额} 没有足够的虚拟内存或分页文件配额以完成指定的操作。  (0xc0000017)
+[0602/212657.989:ERROR:exception_snapshot_win.cc(87)] thread ID 22024 not found in process
+[0602/212657.989:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::Initialize failed

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 5.0//EN"  
+    "http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">  
+<hibernate-mapping>
+	<!-- 实体类，对应的数据表 -->  
+    <class name="com.bjtu.entity.NannyUserAuthInfo" table="nannyuserauthinfo">
+    	<id name="user_id" column="user_id"></id>
+        <property name="target_city" column="target_city"></property>  
+        <property name="is_home" column="is_home"></property>  
+        <property name="experience" column="experience"></property>
+        <property name="education" column="education"></property>
+        <property name="salary" column="salary"></property>  
+        <property name="vacation" column="vacation"></property> 
+         <property name="nation" column="nation"></property>  
+        <property name="faith" column="faith"></property>  
+        <property name="marry_status" column="marry_status"></property>
+        <property name="child_is_local" column="child_is_local"></property>
+        <property name="parent_is_local" column="parent_is_local"></property>  
+          <property name="introduction" column="introduction"></property>
+        <property name="remark" column="remark"></property>  
+    </class>  
+</hibernate-mapping>  

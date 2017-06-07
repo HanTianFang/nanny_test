@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 5.0//EN"  
+    "http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">  
+<hibernate-mapping>
+	<!-- 实体类，对应的数据表 -->  
+    <class name="com.bjtu.entity.EmployerUserAuthInfo" table="employeruserauthinfo">
+    	
+       	<id name="user_id" column="user_id">  </id>  
+        <property name="work_address" column="work_address"></property>  
+        <property name="is_home" column="is_home"></property>  
+        <property name="experience_need" column="experience_need"></property>
+         <property name="education" column="education"></property>  
+        <property name="can_pay" column="can_pay"></property>  
+        <property name="vacation" column="vacation"></property>
+        <property name="baby_birth" column="baby_birth"></property>  
+        <property name="baby_weight" column="baby_weight"></property>  
+        <property name="mother_age" column="mother_age"></property>
+        <property name="mother_weight" column="mother_weight"></property>  
+        <property name="mother_height" column="mother_height"></property>  
+        <property name="childbirth_count" column="childbirth_count"></property>
+        <property name="childbirth_method" column="childbirth_method"></property>
+        
+        
+        
+    </class>  
+</hibernate-mapping>  

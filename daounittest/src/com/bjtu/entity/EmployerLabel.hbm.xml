@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 5.0//EN"  
+    "http://www.hibernate.org/dtd/hibernate-mapping-5.0.dtd">  
+<hibernate-mapping>
+	<!-- 实体类，对应的数据表 -->  
+    <class name="com.bjtu.entity.EmployerLabel" table="employerlabel">
+    	<!-- 主键自增长 -->  
+       	<id name="id" column="ID">  
+            <generator class="native"></generator>  
+        </id>  
+        <property name="name" column="LABEL_NAME"></property>  
+        <property name="describetion" column="DESCRIBETION"></property>  
+        <many-to-one name="employerUserAuthInfo" class="com.bjtu.entity.EmployerUserAuthInfo" update="false"
+insert="false" fetch="select">
+        <column name="user_id" length="50" />
+         </many-to-one>
+      
+   
+    </class>  
+</hibernate-mapping>  
